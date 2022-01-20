@@ -155,7 +155,37 @@ public void AddUser(Customer userToAdd){
         }
         return new Customer();
     }
+    /*
+    public DeleteCustomer(int CustomerID){
+
+        string customerSelect = GetCustomerID(CustomerID.ToString);
+        using SqlConnection connection = new SqlConnection(_connectionString);
+        connection.Open();
+
+        string sqlstoreorderdel = $"DELETE FROM ProductOrder WHERE storeOrderID = @0 AND storeID = @storeID1";
+        string sqlproductdel = $"DELETE FROM ProductOrder WHERE storeID = @storeID2";
+        string sqlcustomerorderrdel = $"DELETE FROM ProductOrder WHERE storeID = @storeID3";
+        string sqlstoredel = $"DELETE FROM ProductOrder WHERE storeID = @storeID4";
+
+        using SqlCommand cmdstoreorder = new SqlCommand(sqlstoreorderdel, connection);
+        cmdstoreorder.Parameters.AddWithValue("storeID1", CustomerID);
+
+        using SqlCommand cmdprod = new SqlCommand(sqlproductdel, connection);
+        cmdprod.Parameters.AddWithValue("storeID2", CustomerID);
+
+        using SqlCommand cmdcustomerorder = new SqlCommand(sqlcustomerorderrdel, connection);
+        cmdcustomerorder.Parameters.AddWithValue("storeID3", CustomerID);
+
+        using SqlCommand cmdstore = new SqlCommand(sqlstoredel, connection);
+        cmdstore.Parameters.AddWithValue("storeID4", CustomerID);
 
 
+        cmdstoreorder.ExecuteNonQuery();
+        cmdprod.ExecuteNonQuery();
+        cmdcustomerorder.ExecuteNonQuery();
+        cmdstoreorder.ExecuteNonQuery();
+        connection.Close();
+    }
+    */
 }
 

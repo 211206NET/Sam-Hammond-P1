@@ -33,16 +33,21 @@ namespace StoreWebAPI.Controllers
 
         // GET api/<StoreController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public ActionResult <List<Storefront>>GetStoreById(int id)
         {
-            return "value";
+            Storefront selectedStore = _isbl.GetStoreID(id);
+            if (selectedStore.StoreID == null)
+            {
+                return NoContent();
+            }
+            return Ok(selectedStore);
         }
 
         // POST api/<StoreController>
         [HttpPost]
         public ActionResult Post([FromBody] Storefront storeToAdd){
             try{
-            _isbl.AddStore(storeToAdd);
+             _isbl.AddStore(storeToAdd);
              return Created("Successfully added", storeToAdd);
             }
              catch (DuplicateRecordException ex)
@@ -58,9 +63,15 @@ namespace StoreWebAPI.Controllers
         }
 
         // DELETE api/<StoreController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        [HttpGet("Storeorders/{id}")]
+        public ActionResult<List<StoreOrder>> GetStoreOrders(int id)
         {
+            List<StoreOrder> allOrders = _isbl.GetAllOrders(id);
+            if (allOrders.Count == 0)
+            {
+                return NoContent();
+            }
+            return Ok(allOrders);
         }
     }
 }

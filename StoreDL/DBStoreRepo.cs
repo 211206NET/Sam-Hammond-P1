@@ -140,7 +140,7 @@ public void AddStore(Storefront StoreToAdd){
         using SqlConnection connection = new SqlConnection(_connectionString);
         connection.Open();
         
-        string sqlCmd = "INSERT INTO Storefront (ID, Address, Name ) VALUES (@ID, @address, @name)"; 
+        string sqlCmd = "INSERT INTO Storefront (Id, Address, Name ) VALUES (@ID, @address, @name)"; 
         using SqlCommand cmdAddStore= new SqlCommand(sqlCmd, connection);
         //Adding paramaters
         Random rnd = new Random();
@@ -209,8 +209,38 @@ public void AddStore(Storefront StoreToAdd){
         return new Storefront();
     }
     
+    public void DeleteStore(int StoreID)
+    {
+
+        int storeSelect = GetStoreID(StoreID).StoreID;
+        using SqlConnection connection = new SqlConnection(_connectionString);
+        connection.Open();
+        
+        string sqlstoreorderdel = $"DELETE FROM ProductOrder WHERE storeOrderID = @0 AND storeID = @storeID1";
+        string sqlproductdel = $"DELETE FROM ProductOrder WHERE storeID = @storeID2";
+        string sqlcustomerorderrdel = $"DELETE FROM ProductOrder WHERE storeID = @storeID3";
+        string sqlstoredel = $"DELETE FROM ProductOrder WHERE storeID = @storeID4";
+
+        using SqlCommand cmdstoreorder = new SqlCommand(sqlstoreorderdel, connection);
+        cmdstoreorder.Parameters.AddWithValue("storeID1", StoreID);
+
+        using SqlCommand cmdprod = new SqlCommand(sqlproductdel, connection);
+        cmdprod.Parameters.AddWithValue("storeID2", StoreID);
+
+        using SqlCommand cmdcustomerorder = new SqlCommand(sqlcustomerorderrdel, connection);
+        cmdcustomerorder.Parameters.AddWithValue("storeID3", StoreID);
+
+        using SqlCommand cmdstore = new SqlCommand(sqlstoredel, connection);
+        cmdstore.Parameters.AddWithValue("storeID4", StoreID);
 
 
+        cmdstoreorder.ExecuteNonQuery();
+        cmdprod.ExecuteNonQuery();
+        cmdcustomerorder.ExecuteNonQuery ();
+        cmdstoreorder.ExecuteNonQuery();
+        connection.Close();
+    }
+    
 }
 
 

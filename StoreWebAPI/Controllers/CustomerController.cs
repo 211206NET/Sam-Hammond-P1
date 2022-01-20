@@ -30,15 +30,22 @@ namespace StoreWebAPI.Controllers
         }
 
         // GET api/<CustomerController>/5
-        [HttpGet("{id}")]
-        public ActionResult<Customer> GetCustomerwithID(int CustomerID)
+        [HttpGet("{id},{password}")]
+        public ActionResult<Customer> GetCustomerwithID(int id, int password)
         {
-            Customer selectedCustomer = _iubl.GetCustomerID(CustomerID);
-            if (selectedCustomer.CustomerId == null)
+            if (password == 1234)
+            {
+                Customer selectedCustomer = _iubl.GetCustomerID(id);
+                if (selectedCustomer.CustomerId == null)
+                {
+                    return NoContent();
+                }
+                return Ok(selectedCustomer);
+            }
+            else
             {
                 return NoContent();
             }
-            return Ok(selectedCustomer);
         }
         // POST api/<CustomerController>
         [HttpPost]

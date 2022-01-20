@@ -29,20 +29,8 @@ namespace StoreWebAPI.Controllers
             return Ok(allProd);
         }
 
-        // get all orders
-        /*
-        [HttpGet]
         
-        public ActionResult<List<StoreOrder>> GetOrders(int StoreID)
-        {
-            List<StoreOrder> allOrders = _isbl.GetAllOrders(StoreID);
-            if (allOrders.Count == 0)
-            {
-               return NoContent();
-            }
-            return Ok(allOrders);
-        }
-        */
+        
         
          //GET api/<CustomerController>/5
         [HttpGet("{id}")]
