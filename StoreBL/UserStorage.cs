@@ -37,6 +37,8 @@ public Customer GetActiveUser(int CustomerId){
 public Customer GetCustomerID(int CustomerID){
     return _dl.GetCustomerID(CustomerID);
 }
-
+public Customer GetCustomerUsername(string username){
+    return _dl.GetCustomerUsername(username);
+}
 
 }

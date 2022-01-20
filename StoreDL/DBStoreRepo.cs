@@ -161,7 +161,9 @@ public void AddStore(Storefront StoreToAdd){
         string sqlCmd = "INSERT INTO Product (Id,ProdName,ProdDescription,ProdPrice,ProdQuantity, StoreID) VALUES (@Id, @name, @description, @price, @quantity, @storeID)"; 
         using SqlCommand cmdAddProd= new SqlCommand(sqlCmd, connection);
         //Adding paramaters
-        cmdAddProd.Parameters.AddWithValue("@Id", ProductToAdd.ItemID);
+        Random rnd = new Random();
+        int RandomID = rnd.Next(10000);
+        cmdAddProd.Parameters.AddWithValue("@Id", RandomID);
         cmdAddProd.Parameters.AddWithValue("@name", ProductToAdd.ProductName);
         cmdAddProd.Parameters.AddWithValue("@description", ProductToAdd.Description);
         cmdAddProd.Parameters.AddWithValue("@price", ProductToAdd.Price);

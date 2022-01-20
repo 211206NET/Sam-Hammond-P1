@@ -145,16 +145,32 @@ public void AddUser(Customer userToAdd){
     
     }
 
-    public Customer GetCustomerID(int CustomerID){
+    public Customer GetCustomerID(int CustomerID)
+    {
 
         List<Customer> allcustomerID = GetAllUsers();
-        foreach(Customer customer in allcustomerID){
-            if (customer.CustomerId == CustomerID){
+        foreach (Customer customer in allcustomerID)
+        {
+            if (customer.CustomerId == CustomerID)
+            {
                 return customer;
             }
         }
         return new Customer();
     }
+        public Customer GetCustomerUsername(string username)
+        {
+
+            List<Customer> allcustomerUsername = GetAllUsers();
+            foreach (Customer customer in allcustomerUsername)
+            {
+                if (customer.UserName == username)
+                {
+                    return customer;
+                }
+            }
+            return new Customer();
+        }
     /*
     public DeleteCustomer(int CustomerID){
 

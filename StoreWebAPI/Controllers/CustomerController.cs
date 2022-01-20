@@ -18,19 +18,26 @@ namespace StoreWebAPI.Controllers
             _iubl = iubl;
         }
         // GET: api/<CustomerController>
-        [HttpGet]
-        public ActionResult<Customer> GetUsers()
+        [HttpGet ("Get All Customers, {password}")]
+        public ActionResult<Customer> GetUsers(int password)
         {
-            List<Customer> AllUsers = _iubl.GetAllUsers();
-            if (AllUsers.Count == 0)
+            if (password == 1234)
+            {
+                List<Customer> AllUsers = _iubl.GetAllUsers();
+                if (AllUsers.Count == 0)
+                {
+                    return NoContent();
+                }
+                return Ok(AllUsers);
+            }
+            else
             {
                 return NoContent();
             }
-            return Ok(AllUsers);
         }
 
         // GET api/<CustomerController>/5
-        [HttpGet("{id},{password}")]
+        [HttpGet("Get customer by ID {id},{password}")]
         public ActionResult<Customer> GetCustomerwithID(int id, int password)
         {
             if (password == 1234)
@@ -47,8 +54,26 @@ namespace StoreWebAPI.Controllers
                 return NoContent();
             }
         }
+        [HttpGet("Get customer by Username {username},{password}")]
+        public ActionResult<Customer> GetCustomerUsername(string username, int password)
+        {
+            if (password == 1234)
+            {
+                Customer selectedCustomer = _iubl.GetCustomerUsername(username);
+                if (selectedCustomer.UserName == null)
+                {
+                    return NoContent();
+                }
+                return Ok(selectedCustomer);
+            }
+            else
+            {
+                return NoContent();
+            }
+        }
+
         // POST api/<CustomerController>
-        [HttpPost]
+        [HttpPost ("Create A Customer")]
         public ActionResult Post([FromBody] Customer UserToAdd){
             try{
             _iubl.AddUser(UserToAdd);
@@ -60,16 +85,18 @@ namespace StoreWebAPI.Controllers
             }
         }
 
-        // PUT api/<CustomerController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
         // DELETE api/<CustomerController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        [HttpDelete("{id},{password}")]
+        public void Delete(int id, int password)
         {
+            if (password == 1234)
+            {
+                
+            }
+            else
+            {
+                
+            }
         }
     }
 }

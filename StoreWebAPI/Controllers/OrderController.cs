@@ -29,7 +29,7 @@ namespace StoreWebAPI.Controllers
         // GET api/<OrderController>/5
         // get all orders
 
-        [HttpGet("{StoreID}")]
+        [HttpGet("get Orders By StoreID{StoreID}")]
 
         public ActionResult<List<StoreOrder>> GetOrders(int StoreID)
         {
@@ -41,7 +41,7 @@ namespace StoreWebAPI.Controllers
             return Ok(allOrders);
         }
         
-        [HttpGet("{UserID}")]
+        [HttpGet("Get Orders By CustomerID {UserID}")]
 
         public ActionResult<List<StoreOrder>> GetOrders2(int StoreID)
         {

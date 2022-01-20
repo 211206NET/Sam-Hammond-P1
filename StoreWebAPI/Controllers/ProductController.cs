@@ -17,7 +17,7 @@ namespace StoreWebAPI.Controllers
         {
             _isbl = isbl;
         }
-        // GET: api/<CustomerController>
+        // GET: api/<ProductController>
         [HttpGet]
         public ActionResult<List<Product>> GetProduct(int StoreID)
         {
@@ -29,35 +29,45 @@ namespace StoreWebAPI.Controllers
             return Ok(allProd);
         }
 
-        
-        
-        
-         //GET api/<CustomerController>/5
+
+
+
+        //GET api/<ProductController>/5
         [HttpGet("{id}")]
-       /*
-        public ActionResult<Product> GetProductwithID(int id)
+        /*
+         public ActionResult<Product> GetProductwithID(int id)
+         {
+             Product selectedProduct = _isbl.GetProductID(id);
+             if (selectedProduct.ItemID == null)
+             {
+                 return NoContent();
+             }
+             return Ok(selectedProduct);
+         }
+        */
+        // POST api/<ProductController>
+        [HttpPost]
+        public ActionResult Post(int StoreID, [FromBody] Product ProdToAdd)
         {
-            Product selectedProduct = _isbl.GetProductID(id);
-            if (selectedProduct.ItemID == null)
+           Storefront selectedStore = _isbl.GetStoreID(StoreID);
+            if (selectedStore.StoreID != null)
+            {
+                _isbl.AddProduct(StoreID, ProdToAdd);
+                return Created("Product Created", ProdToAdd);
+            }
+            else
             {
                 return NoContent();
             }
-            return Ok(selectedProduct);
-        }
-       */
-        // POST api/<CustomerController>
-        [HttpPost]
-        public void Post([FromBody] string value)
-        {
         }
 
-        // PUT api/<CustomerController>/5
+        // PUT api/<ProductController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        /* public void Put([FromBody] string value)
         {
         }
-
-        // DELETE api/<CustomerController>/5
+        */
+        // DELETE api/<ProductController>/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {

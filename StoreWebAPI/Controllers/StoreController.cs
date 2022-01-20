@@ -20,7 +20,7 @@ namespace StoreWebAPI.Controllers
         }
 
         // GET: api/<StoreController>
-        [HttpGet]
+        [HttpGet("Get All Stores" )]
         public ActionResult<List<Storefront>> GetStore()
         {
             List<Storefront> allStores = _isbl.GetAllStores();
@@ -32,7 +32,7 @@ namespace StoreWebAPI.Controllers
         }
 
         // GET api/<StoreController>/5
-        [HttpGet("{id}")]
+        [HttpGet("Get Store By ID {id}")]
         public ActionResult <List<Storefront>>GetStoreById(int id)
         {
             Storefront selectedStore = _isbl.GetStoreID(id);
@@ -44,7 +44,7 @@ namespace StoreWebAPI.Controllers
         }
 
         // POST api/<StoreController>
-        [HttpPost]
+        [HttpPost("Create A Store")]
         public ActionResult Post([FromBody] Storefront storeToAdd){
             try{
              _isbl.AddStore(storeToAdd);
@@ -62,16 +62,6 @@ namespace StoreWebAPI.Controllers
         {
         }
 
-        // DELETE api/<StoreController>/5
-        [HttpGet("Storeorders/{id}")]
-        public ActionResult<List<StoreOrder>> GetStoreOrders(int id)
-        {
-            List<StoreOrder> allOrders = _isbl.GetAllOrders(id);
-            if (allOrders.Count == 0)
-            {
-                return NoContent();
-            }
-            return Ok(allOrders);
-        }
+       
     }
 }
