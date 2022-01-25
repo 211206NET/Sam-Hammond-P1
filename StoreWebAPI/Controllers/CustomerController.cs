@@ -43,10 +43,7 @@ namespace StoreWebAPI.Controllers
             if (password == 1234)
             {
                 Customer selectedCustomer = _iubl.GetCustomerID(id);
-                if (selectedCustomer.CustomerId == null)
-                {
-                    return NoContent();
-                }
+               
                 return Ok(selectedCustomer);
             }
             else
@@ -70,6 +67,24 @@ namespace StoreWebAPI.Controllers
             {
                 return NoContent();
             }
+
+        }
+
+        [HttpGet("Login Customer {Username},{UserPassword}")]
+        public ActionResult<Customer> CustomerLogin(string Username, string UserPassword)
+        {
+            bool validcheck = _iubl.CustomerLogin(Username, UserPassword);
+            Customer selectedCustomer = _iubl.GetCustomerUsername(Username);
+
+            if (validcheck == true)
+            {
+                return Ok(selectedCustomer);  
+            }
+            else
+            {
+                return Unauthorized("wrong password");
+            }
+ 
         }
 
         // POST api/<CustomerController>
@@ -85,18 +100,6 @@ namespace StoreWebAPI.Controllers
             }
         }
 
-        // DELETE api/<CustomerController>/5
-        [HttpDelete("{id},{password}")]
-        public void Delete(int id, int password)
-        {
-            if (password == 1234)
-            {
-                
-            }
-            else
-            {
-                
-            }
-        }
+       
     }
 }

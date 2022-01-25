@@ -13,12 +13,14 @@ namespace StoreWebAPI.Controllers
     {
 
         private ISRepo _isbl;
-        public ProductController(ISRepo isbl)
+        private IURepo _iubl;
+        public ProductController(ISRepo isbl, IURepo iubl)
         {
             _isbl = isbl;
+            _iubl = iubl;
         }
         // GET: api/<ProductController>
-        [HttpGet]
+        [HttpGet("Get All Products")]
         public ActionResult<List<Product>> GetProduct(int StoreID)
         {
             List<Product> allProd = _isbl.GetAllProduct(StoreID);
@@ -29,48 +31,41 @@ namespace StoreWebAPI.Controllers
             return Ok(allProd);
         }
 
-
-
-
         //GET api/<ProductController>/5
-        [HttpGet("{id}")]
-        /*
-         public ActionResult<Product> GetProductwithID(int id)
+        [HttpGet("Get Product by id,{id}")]
+        
+         public ActionResult<Product> GetProductWithID(int id)
          {
-             Product selectedProduct = _isbl.GetProductID(id);
+             Product selectedProduct = _isbl.GetProductWithID(id);
              if (selectedProduct.ItemID == null)
              {
                  return NoContent();
              }
              return Ok(selectedProduct);
          }
-        */
+        
         // POST api/<ProductController>
-        [HttpPost]
-        public ActionResult Post(int StoreID, [FromBody] Product ProdToAdd)
+        [HttpPost("Create a product,{password}")]
+        public ActionResult Post(int StoreID, [FromBody] Product ProdToAdd, int password)
         {
-           Storefront selectedStore = _isbl.GetStoreID(StoreID);
-            if (selectedStore.StoreID != null)
+            if (password == 1234)
             {
-                _isbl.AddProduct(StoreID, ProdToAdd);
-                return Created("Product Created", ProdToAdd);
+                Storefront selectedStore = _isbl.GetStoreID(StoreID);
+                if (selectedStore.StoreID != null)
+                {
+                    _isbl.AddProduct(StoreID, ProdToAdd);
+                    return Created("Product Created", ProdToAdd);
+                }
+                else
+                {
+                    return NoContent();
+                }
             }
             else
             {
                 return NoContent();
             }
         }
-
-        // PUT api/<ProductController>/5
-        [HttpPut("{id}")]
-        /* public void Put([FromBody] string value)
-        {
-        }
-        */
-        // DELETE api/<ProductController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
     }
 }
+

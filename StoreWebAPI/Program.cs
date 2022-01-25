@@ -1,11 +1,15 @@
 using StoreDL;
 using StoreBL;
+using Serilog;
+
+Log.Logger = new LoggerConfiguration()
+    .Enrich.FromLogContext()
+    .WriteTo.File("logger.txt")
+    .CreateLogger();
 
 var builder = WebApplication.CreateBuilder(args);
 
-
 // Add services to the container.
-
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

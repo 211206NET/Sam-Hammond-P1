@@ -19,12 +19,7 @@ namespace StoreWebAPI.Controllers
             _isbl = isbl;
             _iubl = iubl;
         }
-        // GET: api/<OrderController>
-        [HttpGet]
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
+
 
         // GET api/<OrderController>/5
         // get all orders
@@ -40,12 +35,20 @@ namespace StoreWebAPI.Controllers
             }
             return Ok(allOrders);
         }
-        
+        [HttpGet("get Cart By ID {customerID}")]
+
+        public ActionResult<List<CustomerOrder>> GetCart(int customerID)
+        {
+           // List<CustomerOrder> Cart = _iubl.GetAllCustomerOrders(customerID);
+            return Ok();
+        }
+
         [HttpGet("Get Orders By CustomerID {UserID}")]
 
-        public ActionResult<List<StoreOrder>> GetOrders2(int StoreID)
+        public ActionResult<List<StoreOrder>> GetCustomerOrders(int CustomerID)
         {
-            List<StoreOrder> allOrders = _isbl.GetAllOrders(StoreID);
+
+            List<StoreOrder> allOrders = _iubl.GetAllStoreOrders(CustomerID);
             if (allOrders.Count == 0)
             {
                 return NoContent();
@@ -54,28 +57,41 @@ namespace StoreWebAPI.Controllers
         }
 
         // POST api/<OrderController>
-        [HttpPost]
-        public void Post([FromBody] string value)
+        [HttpPost("Add to cart, {CustomerId},{productID},{quantity}")]
+        public ActionResult Post(int CustomerId, int productID, int quantity)
         {
-        }
+            Product Selectedproduct = _isbl.GetProductWithID(productID);
+            
+            _iubl.AddCustomerOrder(CustomerId, productID, quantity);
 
-        // PUT api/<OrderController>/5
-        [HttpPut("{id}")]
-        /*
-        public ActionResult<List<StoreOrder>> GetOrdersID(id){
-            List<StoreOrder> allOrders = _isbl.GetAllOrders(id);
-            if (allOrders.Count == 0){
-                return NoContent();
-            }
-            return Ok(allOrders);
-            }
-        }
-        */
+            //selectedProduct.Quantity = selectedProduct.Quantity - quantity;
 
-// DELETE api/<OrderController>/5
-[HttpDelete("{id}")]
-        public void Delete(int id)
-        {
+            //_isbl.UpdateProduct(productID, selectedProduct);
+
+            return Ok("it worked");
         }
+        
+        [HttpPost("checkout(Create StoreOrder)")]
+       public ActionResult Post(int CustomerId)
+       {
+            //Product currentitems = _isbl.GetProductWithID(ProductID);
+            
+            _iubl.Checkout(CustomerId);
+            return Ok("checkout complete");
+            
+            
+            
+                //Customer activecustomer =_iubl.GetCustomerID(CustomerId);
+
+
+            //CustomerOrder shoppingCart = _iubl.GetAllCustomerOrders(CustomerId);
+
+
+            
+            
+       }
+        
     }
 }
+
+

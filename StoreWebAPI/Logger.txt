@@ -1,0 +1,81 @@
+﻿2022-01-23 19:16:42.771 -08:00 [INF] new user added to database newdude
+2022-01-23 19:16:44.156 -08:00 [INF] new user added to database newdude
+2022-01-24 12:09:21.822 -08:00 [INF] new customer order added to database525.40
+2022-01-24 13:05:43.577 -08:00 [INF] Customer order has been updated 6090752
+2022-01-24 14:54:31.893 -08:00 [INF] new user added to database testing22312
+2022-01-24 14:54:34.447 -08:00 [INF] new user added to database testing22312
+2022-01-24 14:54:38.316 -08:00 [INF] new user added to database testing22312
+2022-01-24 14:54:38.915 -08:00 [INF] new user added to database testing22312
+2022-01-24 14:59:31.283 -08:00 [INF] Product added Pineapple1.2345
+2022-01-24 15:15:39.444 -08:00 [INF] new customer order added to database524.05
+2022-01-24 16:21:19.046 -08:00 [INF] Customer order has been updated 4187952
+2022-01-24 16:21:19.207 -08:00 [INF] Customer order has been updated 4187952
+2022-01-24 16:21:19.284 -08:00 [INF] Customer order has been updated 4187952
+2022-01-24 16:21:19.456 -08:00 [INF] Customer order has been updated 4187952
+2022-01-24 16:21:19.532 -08:00 [INF] Customer order has been updated 4187952
+2022-01-24 16:21:19.606 -08:00 [INF] Customer order has been updated 4187952
+2022-01-24 16:21:19.784 -08:00 [INF] Customer order has been updated 4187952
+2022-01-24 16:21:19.858 -08:00 [INF] Customer order has been updated 4187952
+2022-01-24 16:21:20.034 -08:00 [INF] Customer order has been updated 4187952
+2022-01-24 16:21:20.109 -08:00 [INF] Customer order has been updated 4187952
+2022-01-24 16:21:20.187 -08:00 [INF] Customer order has been updated 4187952
+2022-01-24 16:21:20.369 -08:00 [INF] Customer order has been updated 4187952
+2022-01-24 16:21:20.687 -08:00 [INF] Store Order Added {orderId}{storeId}{total}
+2022-01-24 16:49:47.266 -08:00 [INF] new customer order added to database522.70
+2022-01-24 16:49:57.857 -08:00 [INF] Customer order has been updated 8011152
+2022-01-24 16:49:57.933 -08:00 [INF] Customer order has been updated 8011152
+2022-01-24 16:49:58.003 -08:00 [INF] Customer order has been updated 8011152
+2022-01-24 16:49:58.207 -08:00 [INF] Customer order has been updated 8011152
+2022-01-24 16:49:58.279 -08:00 [INF] Customer order has been updated 8011152
+2022-01-24 16:49:58.353 -08:00 [INF] Customer order has been updated 8011152
+2022-01-24 16:49:58.672 -08:00 [INF] Customer order has been updated 8011152
+2022-01-24 16:49:58.746 -08:00 [INF] Customer order has been updated 8011152
+2022-01-24 16:49:58.942 -08:00 [INF] Customer order has been updated 8011152
+2022-01-24 16:49:59.014 -08:00 [INF] Customer order has been updated 8011152
+2022-01-24 16:49:59.094 -08:00 [INF] Customer order has been updated 8011152
+2022-01-24 16:49:59.287 -08:00 [INF] Customer order has been updated 8011152
+2022-01-24 16:49:59.365 -08:00 [INF] Customer order has been updated 8011152
+2022-01-24 16:49:59.441 -08:00 [INF] Store Order Added {orderId}{storeId}{total}
+2022-01-24 16:54:56.703 -08:00 [INF] new customer order added to database5213.50
+2022-01-24 16:56:39.758 -08:00 [INF] Customer order has been updated 7192352
+2022-01-24 16:56:39.839 -08:00 [INF] Customer order has been updated 7192352
+2022-01-24 16:56:40.011 -08:00 [INF] Customer order has been updated 7192352
+2022-01-24 16:56:40.084 -08:00 [INF] Customer order has been updated 7192352
+2022-01-24 16:56:40.275 -08:00 [INF] Customer order has been updated 7192352
+2022-01-24 16:56:40.352 -08:00 [INF] Customer order has been updated 7192352
+2022-01-24 16:56:41.198 -08:00 [INF] Customer order has been updated 7192352
+2022-01-24 16:56:41.276 -08:00 [INF] Customer order has been updated 7192352
+2022-01-24 16:56:41.349 -08:00 [INF] Customer order has been updated 7192352
+2022-01-24 16:56:41.538 -08:00 [INF] Customer order has been updated 7192352
+2022-01-24 16:56:41.903 -08:00 [INF] Customer order has been updated 7192352
+2022-01-24 16:56:42.153 -08:00 [INF] Customer order has been updated 7192352
+2022-01-24 16:56:42.227 -08:00 [INF] Customer order has been updated 7192352
+2022-01-24 16:56:42.421 -08:00 [INF] Customer order has been updated 7192352
+2022-01-24 16:56:42.505 -08:00 [INF] Store Order Added {orderId}{storeId}{total}
+2022-01-24 16:56:58.666 -08:00 [INF] new customer order added to database526.75
+2022-01-24 16:57:27.623 -08:00 [INF] Customer order has been updated 7686052
+2022-01-24 16:57:27.699 -08:00 [INF] Customer order has been updated 7686052
+2022-01-24 16:57:27.774 -08:00 [INF] Customer order has been updated 7686052
+2022-01-24 16:57:27.994 -08:00 [INF] Customer order has been updated 7686052
+2022-01-24 16:57:28.064 -08:00 [INF] Customer order has been updated 7686052
+2022-01-24 16:57:28.247 -08:00 [INF] Customer order has been updated 7686052
+2022-01-24 16:57:28.321 -08:00 [INF] Customer order has been updated 7686052
+2022-01-24 16:57:28.614 -08:00 [INF] Customer order has been updated 7686052
+2022-01-24 16:57:28.877 -08:00 [INF] Customer order has been updated 7686052
+2022-01-24 16:57:28.953 -08:00 [INF] Customer order has been updated 7686052
+2022-01-24 16:57:29.222 -08:00 [INF] Customer order has been updated 7686052
+2022-01-24 16:57:29.296 -08:00 [INF] Customer order has been updated 7686052
+2022-01-24 16:57:29.476 -08:00 [INF] Customer order has been updated 7686052
+2022-01-24 16:57:29.746 -08:00 [INF] Customer order has been updated 7686052
+2022-01-24 16:57:29.820 -08:00 [INF] Customer order has been updated 7686052
+2022-01-24 16:57:30.093 -08:00 [INF] Store Order Added {orderId}{storeId}{total}
+2022-01-24 18:35:18.712 -08:00 [INF] new user added to database testingagain
+2022-01-24 18:35:19.890 -08:00 [INF] new user added to database testingagain
+2022-01-24 18:35:20.140 -08:00 [INF] new user added to database testingagain
+2022-01-24 18:35:20.640 -08:00 [INF] new user added to database testingagain
+2022-01-24 18:35:20.969 -08:00 [INF] new user added to database testingagain
+2022-01-24 18:35:21.218 -08:00 [INF] new user added to database testingagain
+2022-01-24 18:35:21.486 -08:00 [INF] new user added to database testingagain
+2022-01-24 19:20:02.296 -08:00 [INF] Product added Pineapple1.3476
+2022-01-24 19:24:13.538 -08:00 [INF] Product added peach2.9950
+2022-01-24 19:29:44.590 -08:00 [INF] Product added Lime1.2466

@@ -56,12 +56,5 @@ namespace StoreWebAPI.Controllers
             }
         }
 
-        // PUT api/<StoreController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] int someth9ing)
-        {
-        }
-
-       // testing 
     }
 }

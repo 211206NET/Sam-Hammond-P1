@@ -16,5 +16,6 @@ void AddStoreOrder(StoreOrder newStoreOrder);
     
 int CreateID();
 Storefront GetStoreID(int StoreID);
+public Product GetProductWithID(int productID);
 
 }

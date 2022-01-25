@@ -36,19 +36,13 @@ public class StoreStorage: ISBL{
       return _dl.GetAllProduct(StoreIndex);
       
     }
-// public int GetStoreIndexByID(int StoreID){
-//     return _dl.GetStoreIndexByID(StoreID);
-    
-// }
+    public void AddStoreOrder(StoreOrder newStoreOrder){
+        _dl.AddStoreOrder(newStoreOrder);
+    }
+    public void UpdateProduct(int ItemID, int Quantity){
 
-
-public void AddStoreOrder(StoreOrder newStoreOrder){
-    _dl.AddStoreOrder(newStoreOrder);
-}
-public void UpdateProduct(int ItemID, int Quantity){
-
-    _dl.UpdateProduct(ItemID, Quantity);
-}
+        _dl.UpdateProduct(ItemID, Quantity);
+    }
 
     public List<StoreOrder> GetAllOrders(int StoreIndex)
     {
@@ -62,6 +56,9 @@ public void UpdateProduct(int ItemID, int Quantity){
 
     public Storefront GetStoreID(int StoreID){
         return _dl.GetStoreID(StoreID);
+    }
+    public Product GetProductWithID(int productID){
+        return _dl.GetProductWithID(productID);
     }
 
 }
